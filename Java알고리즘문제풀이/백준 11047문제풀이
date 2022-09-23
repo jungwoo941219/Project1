@@ -1,0 +1,32 @@
+package backjoon;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+/*
+    준규가 가지고 있는 동전은 총 N종류이고, 각각의 동전을 매우 많이 가지고 있다.
+    동전을 적절히 사용해서 그 가치의 합을 K로 만들려고 한다.
+    이때 필요한 동전 개수의 최솟값을 구하는 프로그램을 작성하시오.
+ */
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int N = sc.nextInt(); // 동전의 종류 갯수
+        int K = sc.nextInt(); // 최솟값으로 만드려는 가치
+        int[] Ai = new int[N]; // 동전의 종류 가치
+        
+        for(int i = 0 ; i < Ai.length; i ++ ){ // 액수가치의 값 받기.
+            Ai[i] = sc.nextInt();
+        }
+        int cnt = 0; // K값을 만들기위한 최소 동전갯수
+
+        for(int i = N-1 ; i >= 0 ; i -- ){ // Ai에 담긴 배열값들중 끝자리가 제일 큰수이기에, 배열의 끝부분부터 시작.
+            if( K >= Ai[i] ){
+                cnt += K / Ai[i];
+                K = K % Ai[i];
+            }
+        }
+        System.out.println(cnt); 
+    }
+}
