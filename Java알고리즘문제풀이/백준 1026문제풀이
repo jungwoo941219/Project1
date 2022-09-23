@@ -1,0 +1,41 @@
+package backjoon;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
+
+/*
+    옛날 옛적에 수학이 항상 큰 골칫거리였던 나라가 있었다.
+    이 나라의 국왕 김지민은 다음과 같은 문제를 내고 큰 상금을 걸었다.
+    길이가 N인 정수 배열 A와 B가 있다. 다음과 같이 함수 S를 정의하자.
+    S = A[0] × B[0] + ... + A[N-1] × B[N-1]
+    S의 값을 가장 작게 만들기 위해 A의 수를 재배열하자.
+    단, B에 있는 수는 재배열하면 안 된다.
+    S의 최솟값을 출력하는 프로그램을 작성하시오.
+ */
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt(); // 배열 A , B 의 길이
+        int[] A = new int[N];
+        Integer[] B = new Integer[N];
+
+        for(int i = 0 ; i < A.length ; i ++ ){
+            A[i] = sc.nextInt();
+        }
+
+        Arrays.sort(A); // A배열을 오름차순 정렬.
+
+        for(int i = 0 ; i < A.length ; i ++ ){
+            B[i] = sc.nextInt();
+        }
+        // int 형을 내림차순 할때에는 배열명을 Integer로 선언 해줘야됨.
+        Arrays.sort(B, Comparator.reverseOrder()); // B배열을 내림차순 정렬.
+
+        int total = 0; // 최소값을 담을 변수 선언.
+
+        for(int i = 0 ; i < A.length ; i ++ ) {
+            total += A[i] * B[i];
+        }
+        System.out.println(total);
+    }
+}
