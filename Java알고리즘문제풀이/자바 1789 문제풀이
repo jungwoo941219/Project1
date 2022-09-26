@@ -1,0 +1,22 @@
+import java.util.Scanner;
+/*
+   서로 다른 N개의 자연수의 합이 S라고 한다. S를 알 때, 자연수 N의 최대 갯수는 몇개 일까?
+ */
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        long S = sc.nextLong();
+        long total = 0;
+        int a = 0;
+
+        while(true){
+            
+            total += a;
+            if ( total > S ){
+                break;
+            }
+            a ++ ;
+        }
+        System.out.println(--a);
+    }
+}
