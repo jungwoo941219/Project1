@@ -1,0 +1,124 @@
+body,
+html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Open sans", sans-serif;
+}
+/*
+    ** Overflow란 : 특정요소의 자식요소가 부모요소의 범위를 초과할 때, 필요한 속성
+    - overflow : visible;
+    - 특정요소가 부모의 범위를 넘어가도, 그대로 보여줌.
+
+    - overflow : hidden;
+    - 부모요소의 범위를 넘어가는 자식요소의 부분은 보이지 않도록 설정.
+
+    - overflow : auto;
+    - 부모요소의 범위를 넘어가는 자식요소의 부분이 있을경우, 해당부분은 보이지 않도록 처리.
+    - 사용자가 해당부분을 확인 할 수 있도록 스크롤 바를 표시해줌
+*/
+
+html{
+    background: gray;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/*
+    keyframes : 동영상 응용에서 사용하는 언어.
+                애니메이션 속성으로 이해
+*/
+body {
+    background-size: cover; 
+    background-position: center center;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+input{
+    background: none; /* 배경색을 없애줌 */
+    appearance: none; /* 사용자의 커서가 요소에 올라가 있을때 적용됨 */
+    border: 0; /* 표의 굵기를 지정하는 역할 */
+    font-size: 22px;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+input::placeholder{
+    color: white;
+}
+
+input:focus,
+input:active {
+    outline: none;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    margin-top: 50px; /* margin : 요소들의 사이 여백을 뜻함 */
+}
+
+/*
+** background-size : 옵션 **
+
+    background-size : auto
+   - 기본값 ( 원래 배경 이미지 크기만큼 표시 )
+
+    background-size : contain
+   - 지정한 요소안에 배경 이미지가 다 들어오도록 이미지를 확대 or 축소
+
+    background-size : cover
+   - 지정한 요소를 다 덮도록 배경이미지를 확대 or 축소
+
+** background-position : 옵션 **
+
+    background-position : center center
+   - 배경이미지를 정 가운데에 위치
+   left top / left center / left bottom ... 등등 여러 속성을 가지고 있음
+
+** opacity : 옵션 **
+   - opacity : 요소의 투명도를 설정할 수 있음 ( 0.0 ~ 1.0 ) 까지..
+
+** position 속성 **
+  position
+   - HTML문서 상에서 요소가 배치되는 방식을 결정함.
+
+  position: static
+   - 기본값 ( HTML에 작성된 순서 그대로 브라우저 화면에 표시)
+
+  postion: relative
+   - 원래위치를 기준으로 상대적으로 배치해줌.
+   - 즉, top, bottom, left, right 속성을 줘서 원래위치에서부터 얼마나 떨어지게 할지 지정 가능
+
+  position: absolute
+   - 부모요소(가장 가까운 상위 요소)를 기준으로 top,left,right,bottom 속성을 적용해야함.
+   - 따라서, absolute로 display 속성을 주게디면, 부모요소의 display속성을 relative로 지정해주는 것이 관례.
+*/

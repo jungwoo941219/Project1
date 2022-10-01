@@ -1,0 +1,39 @@
+.center {  
+    display: flex; /* flex : 레이아웃, 정렬 그리고 간격을 설정 하는데에 효과적 */
+    align-items: center;
+    flex-direction: column;
+}
+/*  flex-direction : row, row-reverse, column, column-reverse 등 속성을 줄수 있음
+
+    flex-direction : row ( item이 가로방향으로 * 좌 -> 우 * )
+    flex-direction : row-reverse ( item이 가로방향으로 * 우 -> 좌 * )
+    flex-direction : column ( item이 세로방향으로 * 상 -> 하 * )
+    flex-direction : column-reverse ( item이 세로방향으로 * 하 -> 상 * )
+*/
+    .center .name__input {
+        appearance: none;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 36px;
+        border-bottom: 3px solid rgba(255, 255, 255, 0.8);
+        margin-bottom: 20px;
+    }
+    .center .name__input::placeholder {
+        color: black;
+        opacity: 0.7;
+    }
+
+    .center .name__input:focus,
+    .center .name__input:active {
+        outline: none;
+    }
+
+    .center .name__text {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .center .name{
+        margin-bottom: 30px;
+    }
