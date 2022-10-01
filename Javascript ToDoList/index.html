@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Jungwoo Lee</title>
+</head>
+<body>
+  <section class="center">    <!--섹션 나누기 및 css에 입혀줄 class name 정하기-->
+    <div class="js-clock clock">  <!-- class 시계-->
+      <h3 class="clock__text">00:00</h3>
+    </div>
+    <div class="js-name name"></div>
+    <div>
+      <form class="js-to-do to-do">
+        <input class="js-add-to-do to-do__add-to-do" placeholder="To Do List" type="text" />
+        <!-- placeholder : 입력값을 받기 전에 나타내는 text -->
+        <!-- type : text로 정해주기-->
+      </form>
+      <ul class="js-list list"></ul>
+    </div>
+  </section>                <!-- 섹션 나누기 종료 -->
+  
+  <!-- <div class="js-location location">
+    <span class="location__text"></span>
+  </div> -->
+
+  <!-- <div class="js-weather weather">
+    <span class="weather__text"></span>
+  </div> -->
+
+  <script src="js/greetings.js"></script> <!-- js import 시 맨 밑에 적는것이 기본 -->
+  <script src="js/clock.js"></script>
+  <script src="js/background.js"></script>
+  <script src="js/todo.js"></script>
+</body>
+</html>
